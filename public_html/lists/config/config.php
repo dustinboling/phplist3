@@ -86,3 +86,9 @@ $bounce_unsubscribe_threshold = 5;
 // check the extended config for more info
 // in most cases, it is fine to leave this as it is
 define('HASH_ALGO', 'sha256');
+// if you change the path to the phpList system, make the change here as well
+// path should be relative to the root directory of your webserver (document root)
+// If you install phpList in the document root then the value should be an empty string, not '/'.
+// Warning: Do not change this after installation. You can only change this before you
+// install and initialise phpList.
+$pageroot = '';
