@@ -12,13 +12,13 @@
 ==============================================================================================================
 */
 // what is your Mysql database server hostname
-$database_host = 'localhost';
+$database_host = $_ENV["DB_HOST"];
 // what is the name of the database we are using
-$database_name = 'phplistdb';
+$database_name = $_ENV["DB_DATABASE"];
 // what user has access to this database
-$database_user = 'phplist';
+$database_user = $_ENV["DB_USERNAME"];
 // and what is the password to login to control the database
-$database_password = 'phplist';
+$database_password = $_ENV["DB_PASSWORD"];
 // if you have an SMTP server, set it here. Otherwise it will use the normal php mail() function
 //# if your SMTP server is called "smtp.mydomain.com" you enter this below like this:
 //#
@@ -27,7 +27,7 @@ define('PHPMAILERHOST', '');
 // if TEST is set to 1 (not 0) it will not actually send ANY messages, but display what it would have sent
 // this is here, to make sure you edited the config file and mails are not sent "accidentally"
 // on unmanaged systems
-define('TEST', 1);
+define('TEST', 0);
 /*
 ==============================================================================================================
 *
@@ -41,7 +41,7 @@ define('TEST', 1);
 */
 // Message envelope.
 // This is the address that most bounces will be delivered to
-// Your should make this an address that no PERSON reads
+// You should make this an address that no PERSON reads
 // but a mailbox that phpList can empty every so often, to process the bounces
 // $message_envelope = 'listbounces@yourdomain';
 // Handling bounces. Check README.bounces for more info
